@@ -1,9 +1,11 @@
+import { ChatgptModule } from './chatgpt/chatgpt.module';
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [],
+  imports: [ChatgptModule, ConfigModule.forRoot({ isGlobal: true })],
   controllers: [AppController],
   providers: [AppService],
 })
