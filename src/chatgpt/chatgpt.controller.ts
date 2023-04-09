@@ -10,4 +10,9 @@ export class ChatgptController {
   runCommand(@Body() request: IChatGptRequest): Promise<any> {
     return this.chatService.runCommand(request);
   }
+
+  @Post('/complex')
+  runCommands(@Body() request: IChatGptRequest[]): Promise<any> {
+    return this.chatService.runCommands(request);
+  }
 }
